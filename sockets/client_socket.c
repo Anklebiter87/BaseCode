@@ -84,7 +84,7 @@ databuff* clientread(client_socket* sock){
         }
         else{
             data = (databuff*)realloc(data, totalsize+readsize);
-            void *p = (data + totalsize/8);
+            void *p = (data + totalsize/sizeof(size_t)); //really not the best way to get this offset
             memcpy(p, &tempbuff, readsize);
             totalsize += readsize;
         }
