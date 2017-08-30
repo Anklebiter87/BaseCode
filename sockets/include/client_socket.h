@@ -11,19 +11,19 @@
 #define READBUFFSIZE 4096
 
 typedef struct{
-        int errnum;
-            char *errmsg;
+    int errnum;
+    char *errmsg;
 } errstruct;
 
 typedef struct {
-        size_t totalsize;
-            char buff[];
+    size_t totalsize;
+    char buff[];
 }databuff;
 
 typedef struct {
-        int sockfd;
-            struct sockaddr_in serv_addr;
-                errstruct err;
+    int sockfd;
+    struct sockaddr_in serv_addr;
+    errstruct err;
 }client_socket;
 
 client_socket* buildclientstruct(void); //build the calloc memory space and returns the struct pointer
