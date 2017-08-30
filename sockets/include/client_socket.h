@@ -1,3 +1,5 @@
+#ifndef __CLIENT_SOCKET_H__
+#define __CLIENT_SOCKET_H__
 
 #include <netdb.h>
 #include <errno.h>
@@ -30,3 +32,4 @@ int clientconnect(client_socket*); //connects to hostname/ip
 int clientwrite(client_socket*, char*, size_t); //handles writing to the socket args(client_socket struct, buffer, buffer size)
 databuff* clientread(client_socket*); //reads all the data sent from the server
 
+#endif 
