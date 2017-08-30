@@ -1,3 +1,8 @@
+/*
+ * This is really crappy code, you should feel bad and rewrite it
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
