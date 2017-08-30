@@ -83,7 +83,15 @@ databuff* clientread(client_socket* sock){
             memcpy(data, &tempbuff, readsize);
         }
         else{
-            data = (databuff*)realloc(data, totalsize+readsize);
+            void *tmp = (databuff*)realloc(data, totalsize+readsize);
+            if(tmp == NULL){
+                char errmsg[] = "Could not allocate memory";
+                close(sock->sockfd);
+                sock->err.errnum = -1;
+                sock->err.errmsg = errmsg;
+                break;
+            }
+            data = tmp;
             void *p = (data + totalsize/sizeof(size_t)); //really not the best way to get this offset
             memcpy(p, &tempbuff, readsize);
             totalsize += readsize;
