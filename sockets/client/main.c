@@ -5,11 +5,12 @@
 
 
 int main(int argc, char *argv[]) {
-    int portno, n;
+    int portno;
+//    int n;
     client_socket *sock;
     databuff *data;
     FILE *f;
-    char buffer[256];
+//    char buffer[256];
 
     if (argc < 3) {
         fprintf(stderr,"usage %s hostname port\n", argv[0]);
