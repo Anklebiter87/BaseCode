@@ -1,0 +1,5 @@
+## build .a files
+ar rcs lib<libname>.a <path to .so>
+
+## gcc full line
+gcc client.c mbedtls/lib/libmbedx509.a mbedtls/lib/libmbedcrypto.a mbedtls/lib/libmbedtls.a -I mbedtls/include -L mbedtls/lib/ -lmbedtls -lmbedcrypto -lmbedx509
