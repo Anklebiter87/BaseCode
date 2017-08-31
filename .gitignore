@@ -21,3 +21,9 @@
 *.i*86
 *.x86_64
 *.hex
+
+#YouCompleteME config
+.ycm_extra_conf.py
+
+#pycharm files
+.idea/
