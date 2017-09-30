@@ -1,0 +1,4 @@
+Just playing with the memory used between reading a file to memory and using a mmap
+
+gcc main.c -o memoryusage
+valgrind ./memoryusage <file to read in> <calloc|map>
